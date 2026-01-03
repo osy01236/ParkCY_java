@@ -38,8 +38,7 @@ public class MainMethod2 {
 		int money = 1000;
 		int time = 30;
 		
-		int hh4 = 240;
-		int mh4 = 2500;
+		
 		
 		
 		System.out.print("몇분 주차 : ");
@@ -51,10 +50,10 @@ public class MainMethod2 {
 		if(min == 0) {
 			System.out.println("0원");
 		}
-		else if(min <= 1 || min < time) {
+		else if(min < 1 || min <= time) {
 			System.out.println(money+"원");
 		}
-		else if(min >= time && min < mh4)  {
+		else if(min > time && min < 240)  {
 			System.out.println(money+((min-time)/10)*100+"원");
 //		if(min >=40  && min<50)  {
 //			System.out.println("1100원");}
@@ -98,7 +97,7 @@ public class MainMethod2 {
 //			System.out.println("3000원");
 //		
 		}else if (min >= 240 ) {
-			System.out.println(mh4+((min-hh4)/10)*100+"원");
+			System.out.println(2500+((min-240)/10)*100+"원");
 			
 	}
 		
