@@ -43,8 +43,8 @@ public class MainMethod2 {
 		
 		
 		System.out.print("몇분 주차 : ");
-		Scanner sc = new Scanner(System.in);
-		int min = sc.nextInt();
+		Scanner kbd = new Scanner(System.in);
+		int min = kbd.nextInt();
 		
 	
 		
