@@ -1,5 +1,6 @@
 package study20260102;
 
+import java.util.Scanner;
 
 public class MainMethod {
 
@@ -31,6 +32,7 @@ public class MainMethod {
 		    System.out.println("30대 이다");
 	
 	
+		
 	
 		//if 문
 		// 주차장에 요금이 기본요금은 1000원입니다.
@@ -41,7 +43,46 @@ public class MainMethod {
 		//     4시간 12분(252분) ->2600원
 		
 	
+		
+		int cost = 1000; // 기본요금
+		int inc = 100, incTime = 10 ;//10분당 100원
+		int time =30;  // 기본시간
+		//int time2 = 240;  //4시간 
 	
+		//주차 시간 총 몇분 입력
+		Scanner scan = new Scanner(System.in); //시스템(컴퓨터)으로부터 입력받은 값 받기
+		
+		System.out.print(" 총 몇분 주차 : ");
+		int pTime = scan.nextInt();   //키보드 입력 값을 받아서 정수로 변환하여 변수에 저장 
+		
+		pTime /= 10;   // pTime = pTime/10 -3
+		if(pTime >=24) {  //4시간 이상 주차했다면   pTime>=240
+			cost=2500;// 4시간이상 일때 기본요금 변경
+		pTime = 24;  //4시간뺴기 ; 4시간에 대한 요금은 2500원 나머지 20분요금
+		}else if(pTime > 3) {
+			//4시간 이상이 아니라면, 기본시간 30분을 계산하야한다.
+			pTime -=3; // 기본시간이 30분이니까 3빼기
+		}else { //최초 기본시간 안에서 주차 한 경우
+			pTime=0;
+		}
+		
+		
+		
+		//주차 요금 계산
+		
+		
+		int price = cost + pTime*100;
+		System.out.println("주차 요금 : "+ price+"원");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }
