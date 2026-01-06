@@ -4,8 +4,14 @@ public class ArrayMain {
 
 	public static void main(String[] args) {
 		int[] arr = new int[50];
+		// arr은 참조 변수이다. 참조 변수는 메모리 주소를 저장할 수 있는 변수이다.
+		//
+		System.out.println(arr);
+		int[]arr2= {10,20,30};	
 		
-
+		
+		
+		
 		
 	}
 
