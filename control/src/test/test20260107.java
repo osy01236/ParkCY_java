@@ -54,7 +54,7 @@ int[] seats = new int[50];   //1차원 배열 50의 크기
 		break;
 	}
 
-	
+	System.out.println();
 
 
 
