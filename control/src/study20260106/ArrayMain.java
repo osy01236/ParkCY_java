@@ -37,6 +37,7 @@ public class ArrayMain {
 //			System.out.println(num);
 //		}
 //		
+		
 //		
 //		
 		String[] fruits = {"사과","딸기","배","수박",
