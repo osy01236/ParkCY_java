@@ -54,6 +54,10 @@ int[] seats = new int[50];   //1차원 배열 50의 크기
 		break;
 	}
 
+	if(a== user) {       //연속되어 비어 있는 a칸과 예약할 인원수가 같을떄
+		
+	}
+	
 	System.out.println();
 
 
