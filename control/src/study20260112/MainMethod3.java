@@ -5,11 +5,15 @@ public class MainMethod3 {
 	public static void main(String[] args) {
 		 
  
-		ProductInfo prinfo = new ProductInfo("그래픽카드", 150, "컴퓨터부품", 4);
-		System.out.println(prinfo);
+		Car car =new Car("쏘렌토", 2000, 1);
 		
-		UserInfo userinfo = new UserInfo("박찬용","cksdyd5432", 12345, 66720588);
-		System.out.println(userinfo);
+		System.out.println(car);
+	
+	
+		car.buy(2000);
+	
+		System.out.println(car);
+	
 	}
 
 }
