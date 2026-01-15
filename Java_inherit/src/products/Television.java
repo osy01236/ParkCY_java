@@ -4,6 +4,11 @@ import common.Appliance;
 
 public class Television extends Appliance {   //텔레비전
 
+	public int sound;
+	public int ch;
+	
+	
+	
 	@Override
 	public void power() {
 		onoff = !onoff;
