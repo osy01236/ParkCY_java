@@ -154,18 +154,19 @@ public class test20260115_2 {
 		int max=0;
 		
 		for(int i = 0; i<arr3.length; i++) {		
-			if( i = arr3.length -1
+			if( i ==arr3.length-1) {
+				sum1+=arr3[i];
 			avg= sum1/arr3.length;
-			if(arr3[i]>avg ) {
-				System.out.println(arr[i]);
 			}
-		}
+				
+			}
 		System.out.println(avg);
 		System.out.println(sum1);
+		}
 		
 	
 	}
 
 	
-	}
+	
 
