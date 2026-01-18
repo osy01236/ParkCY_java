@@ -9,14 +9,14 @@ public class MainMethod {
 
 	public static void main(String[] args) {
 
-		int balance=0;
-		Transaction[] transactions = {
+		int balance=0;   //잔액 
+		Transaction[] transactions = {      // 부모 클래스 Transaction(int amount, String date, String memo)
 	            new Expense(-5000, "1월12일 월요일 ", "식비"),
 	            new Expense(-6000, "1월13일 화요일", "식비"),
 	            new Transfer(-30000, "1월 14일 수요일", "기름값"), 
 	            new Transfer(-7000, "1월 15일 목요일", "식비"), 
-	            new Income(100000, "1월 15일 금요일", "중고판매")
-		
+	            new Income(80000, "1월 15일 금요일", "알바비"),
+	            new Transfer (10000, "1월16,17일 ","감기약" )
 		};
 
 	        for(Transaction t : transactions) {

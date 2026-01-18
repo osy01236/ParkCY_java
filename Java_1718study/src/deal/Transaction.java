@@ -17,7 +17,7 @@ public abstract class Transaction {
 	}
 
 
-	public abstract void balance(); //잔액
+	public abstract void balance(); //잔액 이란 것이 있고 3명이서 알아서 계산해라 부모는 터치 안한다.
 	
 	
 	

@@ -9,7 +9,7 @@ public class Transfer extends Transaction{
 		super(amount, date, memo);
 	}
 	@Override
-	public void balance() {
+	public void balance() { //잔액
 		if(amount > 0) {
             System.out.println("[받은 금액 :" + amount + "원]");
         } else {

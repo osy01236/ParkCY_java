@@ -10,7 +10,7 @@ public class Income extends Transaction{
 		super(amount, date, memo);
 	}
 	@Override
-	public void balance() {
+	public void balance() { //잔액
 		System.out.println("[수입 : "+amount+"원]");
 		
 	}

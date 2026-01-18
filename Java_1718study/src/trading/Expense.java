@@ -9,7 +9,7 @@ public class Expense extends Transaction {
 	}
 
 	@Override
-	public void balance() {
+	public void balance() { //잔액
 		
 		System.out.println("[지출 : "+amount+"원]");
 		
