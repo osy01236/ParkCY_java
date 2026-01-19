@@ -26,3 +26,4 @@ public class AppAttend implements Attendance{
 	}
 
 }
+
