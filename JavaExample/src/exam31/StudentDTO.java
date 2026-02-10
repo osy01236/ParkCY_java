@@ -13,6 +13,11 @@ public class StudentDTO {
 
     public StudentDTO() {}
 
+   
+    
+    
+    
+    
     public int getHakbun() {
         return hakbun;
     }
