@@ -1,10 +1,10 @@
-package claimhistory;
+	package team4_3;
 
-import java.sql.Connection;     //DB서버 연결
-import java.sql.DriverManager;  //DB서버 연결
+import java.sql.Connection;         //DB서버 연결
+import java.sql.DriverManager;      //DB서버 연결
 
-import java.sql.*;
-import java.sql.PreparedStatement; //테이블에 SQL 실행
+
+import java.sql.PreparedStatement;  //테이블에 SQL 실행
 import java.sql.ResultSet;          //테이블에서 조회한 결과
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +17,10 @@ public class ClaimHistoryDAO {
 //  DB 서버 연결을 위한 드라이버, 주소 , 아이디 ,비번
 	String dbDrv = "com.mysql.cj.jdbc.Driver";
 //	DB 드라이버
-	String dbUrl = "jdbc:mysql://localhost:3306/javaExample?serverTimezone=Asia/Seoul";
+//	String dbUrl = "jdbc:mysql://localhost:3306/javaExample?serverTimezone=Asia/Seoul";
+	String dbUrl = "jdbc:mysql://codevlab.kr:3306/team4?serverTimezone=Asia/Seoul";
 //    DB 주소
+//	String dbUsr = "javauser";
 	String dbUsr = "team4";
 //  DB 아이디 
 	String dbPwd = "123456";
@@ -66,10 +68,10 @@ public class ClaimHistoryDAO {
 		
          		while (rs.next()) {
                     ClaimHistoryDTO chdto = new ClaimHistoryDTO(
-                        rs.getLong("id"),
-                        rs.getLong("lost_item_id"),
-                        rs.getLong("owner_claim_id"),
-                        rs.getTimestamp("date")   
+                        rs.getLong("id"),                          //실제 테이블의 컬럼명
+                        rs.getLong("lost_item_id"),                //실제 테이블의 컬럼명
+                        rs.getLong("owner_claim_id"),              //실제 테이블의 컬럼명
+                        rs.getTimestamp("action_date")             //실제 테이블의 컬럼명
                     );
                     list.add(chdto);
                 }
@@ -82,23 +84,5 @@ public class ClaimHistoryDAO {
 
             return list;
         }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }

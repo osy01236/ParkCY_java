@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="control/src"/>
+	<classpathentry kind="src" path="Java_1718study/src"/>
+	<classpathentry kind="src" path="Java_inherit/src"/>
+	<classpathentry kind="src" path="Java0129/src"/>
+	<classpathentry kind="src" path="Java202601232425/src"/>
+	<classpathentry kind="src" path="JavaExample/src"/>
+	<classpathentry kind="src" path="team4_3/src"/>
+	<classpathentry kind="output" path="Java202601232425/bin"/>
+</classpath>

@@ -1,6 +1,7 @@
-package claimhistory;
+package team4_3;
 
 import java.sql.Timestamp;
+import java.util.Scanner;
 
 public class ClaimHistoryDTO {
 
@@ -9,6 +10,9 @@ public class ClaimHistoryDTO {
 	private long ownerClaimId;
 	private Timestamp date;
 	
+	public ClaimHistoryDTO() {
+		
+	}
 	
 	public ClaimHistoryDTO(long id, long lostItemId, long ownerClaimId, Timestamp date) {
 		
@@ -18,7 +22,22 @@ public class ClaimHistoryDTO {
 		this.date = date;
 	}
 
+	public void inputClaimHistory() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("분실물ID : ");
+		this.lostItemId = sc.nextLong();
+		System.out.print("분실주인ID : ");
+		this.ownerClaimId = sc.nextLong();
+	}
 
+	public void print() {
+	    System.out.printf("%d | %d | %d | %s%n",
+	            this.id,
+	            this.lostItemId,
+	            this.ownerClaimId,
+	            this.date);
+	}
 	
 
 
