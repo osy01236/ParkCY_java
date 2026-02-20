@@ -1,4 +1,4 @@
-	package team4_3;
+package team4_3;
 
 import java.sql.Connection;         //DB서버 연결
 import java.sql.DriverManager;      //DB서버 연결
@@ -28,10 +28,15 @@ public class ClaimHistoryDAO {
 	
 	//이력추가
 	public int inserthistory(long lostItemId, long ownerClaimId) {
+		
+		if(duplicatehistory(lostItemId)) {
+			return 0;
+		}
+		
 		int result = 0;
 		String sql="""
                       insert into claim_history
-                      (lost_item_id, owner_claim_id, date) 
+                      (lost_item_id, owner_claim_id, action_date) 
                       values (?, ?, now())
                    """;
 		try (																	  //코드가 끝나면 자동실행
@@ -43,19 +48,50 @@ public class ClaimHistoryDAO {
 			
 			result = pstmt.executeUpdate();										  //DB에서 실행해고 저장한다		
 			
+			
+			
 		}catch(Exception e) {                                                     //try 안의 오류 캐치 ( 어떤오류고 어디줄인지 이유까지)
 			e.printStackTrace();                                                  // 에러에 대한 내용 출력
 		}
 		return result;
 	}
+	
+	public boolean duplicatehistory(long lostItemId) {
+		String sql="""    
+					  select count(*)
+					  form claim_history
+					  where lost_item_id=?
+				   """;
+		try (																	      //코드가 끝나면 자동실행
+				Connection conn = DriverManager.getConnection(dbUrl, dbUsr, dbPwd);   //DB 주소 아이디 비번으로 접속
+				PreparedStatement pstmt = conn.prepareStatement(sql);                 //DB와 연결된 상태에서 SQL을 실행할 수 있는 객체
+			){
+			    pstmt.setLong(1, lostItemId);                                          //lostitemid 아이디를 가져오고
+     		    ResultSet rs = pstmt.executeQuery();  
+	
+     		    if(rs.next()) {
+     		    	return rs.getInt(1)>0;
+     		    }
+     		    
+     		    
+		}catch(Exception e) {                                                     //try 안의 오류 캐치 ( 어떤오류고 어디줄인지 이유까지)
+			e.printStackTrace();                                                  // 에러에 대한 내용 출력
+		}
+		return false;
+			
+		}
+	
+	
+
+	
 	//2분실물별 이력 조회
 	public List<ClaimHistoryDTO> selectAllLostItemId(long lostItemId){
 		List<ClaimHistoryDTO> list = new ArrayList<>();
 		String sql = """
-				        select id, lost_item_id, owner_claim_id, date
+				        select id, lost_item_id, owner_claim_id, action_date
 				        from claim_history
 				        Where lost_item_id=?
-				        order by date desc
+				        order by action_date desc
 				     """;
 		
 		try (
